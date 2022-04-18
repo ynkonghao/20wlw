@@ -5,7 +5,10 @@
 <configuration>
     <properties resource="mybatis.properties"/>
     <typeAliases>
-        <typeAlias type="org.wlw.model.Student" alias="student"/>
+        <!--为一个类加上别名,type表示类的类型，alias表示别名，使用这种方式，如果有10个类，要写10条信息-->
+<!--        <typeAlias type="org.wlw.model.Student" alias="student"/>-->
+        <!--基于包扫描的方式来进行，此时会自动将包中的所有类去别名，别名的名称就是类名-->
+        <package name="org.wlw.model"/>
     </typeAliases>
     <environments default="development">
         <!--enviroment用来进行数据库的连接配置-->
@@ -26,6 +29,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org/wlw/model/StudentMapper.xml"/>
+        <mapper resource="org/wlw/mapper/StudentMapper.xml"/>
+        <mapper resource="org/wlw/mapper/ClassroomMapper.xml"/>
     </mappers>
 </configuration>

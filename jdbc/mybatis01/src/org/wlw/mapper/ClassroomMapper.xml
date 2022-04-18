@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper用来编写配置，namespace表示的是命名空间，防止重复，建议使用类的全路径-->
+<mapper namespace="org.wlw.mapper.ClassroomMapper">
+    <!--编写数据库的操作，id用来标识一个唯一的操作，resultType表示返回的类型-->
+    <select id="find" resultType="classroom">
+        select * from t_classroom
+    </select>
+
+    <select id="load" parameterType="int" resultType="classroom">
+        select * from t_classroom where id=#{id}
+    </select>
+
+    <update id="update" parameterType="classroom">
+        update t_classroom set name=#{name},grade=#{grade},mobile1=#{mobile1},special=#{special},
+                         teacher1=#{teacher1},teacher2=#{teacher2},mobile2=#{mobile2} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from t_classroom where id=#{id}
+    </delete>
+
+    <insert id="add" parameterType="classroom">
+        insert into t_classroom(name,grade,special,teacher1,mobile1,teacher2,mobile2) value
+            (#{name},#{grade},#{special},#{teacher1},#{mobile1},#{teacher2},#{mobile2})
+    </insert>
+</mapper>

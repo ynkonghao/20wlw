@@ -29,6 +29,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org/wlw/model/StudentMapper.xml"/>
+        <mapper resource="org/wlw/mapper/StudentMapper.xml"/>
+        <mapper resource="org/wlw/mapper/ClassroomMapper.xml"/>
     </mappers>
 </configuration>

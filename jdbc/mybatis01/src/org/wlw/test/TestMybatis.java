@@ -31,7 +31,7 @@ public class TestMybatis {
         }
     }
     private String getId(String id) {
-        return "org.wlw.model.Student."+id;
+        return "org.wlw.mapper.Student."+id;
     }
     @Test
     public void selectList() {
@@ -65,7 +65,7 @@ public class TestMybatis {
         SqlSession session = null;
         try {
             session = sqlSessionFactory.openSession();
-            Student stu = session.selectOne("org.wlw.model.Student.load",1);
+            Student stu = session.selectOne("org.wlw.mapper.Student.load",1);
             System.out.println(stu);
             Logger.getRootLogger().debug(stu);
         } catch (Exception e) {
@@ -77,10 +77,10 @@ public class TestMybatis {
     @Test
     public void testUpdate() {
         try(SqlSession session = sqlSessionFactory.openSession()) {
-            Student stu = session.selectOne("org.wlw.model.Student.load",3);
+            Student stu = session.selectOne("org.wlw.mapper.Student.load",3);
             stu.setNo("0233");
             stu.setMobile("343434");
-            session.update("org.wlw.model.Student.update",stu);
+            session.update("org.wlw.mapper.Student.update",stu);
             session.commit();//提交事务
         }
     }
@@ -97,7 +97,7 @@ public class TestMybatis {
             stu.setIcon("002.png");
             stu.setQq("33333");
             stu.setMobile("2323333");
-            session.insert("org.wlw.model.Student.add",stu);
+            session.insert("org.wlw.mapper.Student.add",stu);
             session.commit();
         }
     }
@@ -105,7 +105,7 @@ public class TestMybatis {
     @Test
     public void testDelete() {
         try(SqlSession session = sqlSessionFactory.openSession()) {
-            session.delete("org.wlw.model.Student.delete",3);
+            session.delete("org.wlw.mapper.Student.delete",3);
             session.commit();
         }
     }

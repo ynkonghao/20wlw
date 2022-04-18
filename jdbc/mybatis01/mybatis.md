@@ -568,3 +568,190 @@ password=20wlw123
 ```
 使用typeAlias可以单独为某个类添加别名，此时如果类比较多，需要添加很多条数据，可以直接使用package进行包扫描
 使用了包扫描之后，会自动扫描org.wlw.model中的所有类，并且为其加上别名。
+#### 九、使用mapper的方式进行操作
+使用mapper的方式，可以简化代码，具体的步骤有：
+
+1、创建model类。
+```java
+package org.wlw.model;
+
+public class Classroom {
+    private int id;
+    private String name;
+    private String grade;
+    private String special;
+    private String teacher1;
+    private String teacher2;
+    private String mobile1;
+    private String mobile2;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getSpecial() {
+        return special;
+    }
+
+    public void setSpecial(String special) {
+        this.special = special;
+    }
+
+    public String getTeacher1() {
+        return teacher1;
+    }
+
+    public void setTeacher1(String teacher1) {
+        this.teacher1 = teacher1;
+    }
+
+    public String getTeacher2() {
+        return teacher2;
+    }
+
+    public void setTeacher2(String teacher2) {
+        this.teacher2 = teacher2;
+    }
+
+    public String getMobile1() {
+        return mobile1;
+    }
+
+    public void setMobile1(String mobile1) {
+        this.mobile1 = mobile1;
+    }
+
+    public String getMobile2() {
+        return mobile2;
+    }
+
+    public void setMobile2(String mobile2) {
+        this.mobile2 = mobile2;
+    }
+
+    @Override
+    public String toString() {
+        return "Classroom{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", grade='" + grade + '\'' +
+                ", special='" + special + '\'' +
+                ", teacher1='" + teacher1 + '\'' +
+                ", teacher2='" + teacher2 + '\'' +
+                ", mobile1='" + mobile1 + '\'' +
+                ", mobile2='" + mobile2 + '\'' +
+                '}';
+    }
+}
+
+```
+2、创建Mapper文件，文件建议放到mapper的包中
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper用来编写配置，namespace表示的是命名空间，防止重复，建议使用类的全路径-->
+<mapper namespace="org.wlw.mapper.ClassroomMapper">
+    <!--编写数据库的操作，id用来标识一个唯一的操作，resultType表示返回的类型-->
+    <select id="find" resultType="classroom">
+        select * from t_classroom
+    </select>
+
+    <select id="load" parameterType="int" resultType="classroom">
+        select * from t_classroom where id=#{id}
+    </select>
+
+    <update id="update" parameterType="classroom">
+        update t_classroom set name=#{name},grade=#{grade},mobile1=#{mobile1},special=#{special},
+                         teacher1=#{teacher1},teacher2=#{teacher2},mobile2=#{mobile2} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from t_classroom where id=#{id}
+    </delete>
+
+    <insert id="add" parameterType="classroom">
+        insert into t_classroom(name,grade,special,teacher1,mobile1,teacher2,mobile2) value
+            (#{name},#{grade},#{special},#{teacher1},#{mobile1},#{teacher2},#{mobile2})
+    </insert>
+</mapper>
+```
+需要注意的是，namespace使用Mapper的名称，这个Mapper的名称会和接口完成对应
+
+3、创建Mapper接口
+
+接口一般建议放到和Mapper文件一样的包中，也就是保证，接口的名称必须和mapper中的namespace的名称完全一致，包括包名
+接口中的函数和mapper中的id一一对应。
+```java
+public interface ClassroomMapper {
+    public void add(Classroom cla);
+    public void update(Classroom cla);
+    public Classroom load(int id);
+    public List<Classroom> find();
+    public void delete(int id);
+}
+
+```
+此时当调用mapper中的add方法时，会去mapper中找id为add的sql语句完成操作。
+操作的方式如下
+```java
+public class TestClassroom {
+    SqlSessionFactory sqlSessionFactory = null;
+
+    @Before
+    public void init() {
+        try {
+            String xml = "mybatis-config.xml";
+            //1、根据配置文件创建输入流
+            InputStream is = Resources.getResourceAsStream(xml);
+//            System.out.println(is);
+            //2、创建SqlSessionFactory来完成数据库配置
+            sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testAdd() {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        try {
+            Classroom cla = new Classroom();
+            cla.setName("2020物联网工程");
+            cla.setGrade("2020");
+            cla.setSpecial("物联网工程技术");
+            cla.setTeacher1("孔老师");
+            cla.setMobile1("13908700156");
+            cla.setTeacher2("李老师");
+            cla.setMobile2("12344223");
+            //根据SqlSession获取Mapper接口
+            ClassroomMapper mapper = sqlSession.getMapper(ClassroomMapper.class);
+            mapper.add(cla);
+            sqlSession.commit();
+        } finally {
+            sqlSession.close();
+        }
+    }
+}
+```

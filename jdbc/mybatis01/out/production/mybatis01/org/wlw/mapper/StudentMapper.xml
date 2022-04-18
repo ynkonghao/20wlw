@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--mapper用来编写配置，namespace表示的是命名空间，防止重复，建议使用类的全路径-->
-<mapper namespace="org.wlw.model.Student">
+<mapper namespace="org.wlw.mapper.Student">
     <!--编写数据库的操作，id用来标识一个唯一的操作，resultType表示返回的类型-->
     <select id="find" resultType="student">
         select * from t_stu
