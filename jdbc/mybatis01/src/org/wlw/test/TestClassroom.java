@@ -11,6 +11,7 @@ import org.wlw.model.Classroom;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class TestClassroom {
     SqlSessionFactory sqlSessionFactory = null;
@@ -47,6 +48,54 @@ public class TestClassroom {
             sqlSession.commit();
         } finally {
             sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testUpdate() {
+        SqlSession session = sqlSessionFactory.openSession();
+        try {
+            Classroom cla = session.getMapper(ClassroomMapper.class).load(5);
+            cla.setName("2022计算机科学技术1班");
+            session.getMapper(ClassroomMapper.class).update(cla);
+            session.commit();
+        } finally {
+            session.close();
+        }
+    }
+
+    @Test
+    public void testDelete() {
+        SqlSession session = sqlSessionFactory.openSession();
+        try {
+            session.getMapper(ClassroomMapper.class).delete(1);
+            session.commit();
+        } finally {
+            session.close();
+        }
+    }
+
+    @Test
+    public void testLoad() {
+        SqlSession session = sqlSessionFactory.openSession();
+        try {
+            Classroom cla = session.getMapper(ClassroomMapper.class).load(7);
+            System.out.println(cla);
+        } finally {
+            session.close();
+        }
+    }
+
+    @Test
+    public void testFind() {
+        SqlSession session = sqlSessionFactory.openSession();
+        try {
+            List<Classroom> clas = session.getMapper(ClassroomMapper.class).find();
+            for(Classroom cla : clas) {
+                System.out.println(cla);
+            }
+        } finally {
+            session.close();
         }
     }
 }
