@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;org.wlw.user01&apos; to &apos;org.wlw.user02&apos;&#x0D;&#x0A;- Original project: &apos;t_lesson24&apos;&#x0D;&#x0A;- Original element: &apos;t_lesson24/src/org.wlw.user01&apos;&#x0D;&#x0A;- Renamed element: &apos;t_lesson24/src/org.wlw.user02&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;org.wlw.user01&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;org.wlw.user01" name="org.wlw.user02" qualified="false" references="true" stamp="1637896261105" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选择器</title>
+  <style>
+    /* *号选择器是最早加载的，所有的标签都满足，但是只要标签写了任意一个相同的样式都会覆盖*/
+    /**{
+      color:#993;
+    }*/
+    /*为id为d1容器写样式*/
+    #d1 {
+      font-size:22px;
+      color:#090;
+    }
+    /*为网页中class为c1的标签写样式*/
+    div.c1 {
+      border:1px solid red;
+      color:#00f;
+    }
+    /*标签选择器*/
+    /*div {
+      color:#f00;
+    }*/
+    /*子类选择器，为ul中的所有li编写样式*/
+    #u1 li {
+      list-style:none;
+      color:#933;
+    }
+    /*ul中的所有span，不管多少级都能匹配*/
+    /*ul span {
+      background:#aaa;
+      color:#f00;
+    }*/
+    /*只为ul中的第一级的span添加样式*/
+    ul > span {
+      background:#aaa;
+      color:#f00;
+    }
+    /*
+    子类选择器是所有选择器中最后加载的。
+    */
+    #container li.l1 {
+      color:#009;
+    }
+    /*超链接的默认情况*/
+    /*使用,表示两个选择器同时使用一个样式*/
+    a.link:link, a.link:visited {
+      text-decoration: none;
+      color:#373;
+    }
+    /*鼠标移动上去的情况*/
+    a.link:hover {
+      text-decoration: underline;
+      color:#933;
+    }
+    /*点击过后的情况*/
+    /*a.link:visited {
+      color:#5b5;
+    }*/
+
+    #u2 li:hover {
+      background:#eee;
+    }
+    /*
+    nth-child(2)表示第二节点
+    nth-child(even)所有的偶数节点，odd所有的奇数节点
+    */
+    #u2 li:nth-child(even) {
+      background: #393;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <!--一个网页中id是不建议重复的，是唯一标识-->
+  <div id="d1" class="c1">
+    我是一个容器
+  </div>
+  <div class="c1">
+    我还是一个容器
+  </div>
+  <div class="c1">
+    我依然是一个容器
+  </div>
+  <ul class="c1" id="u1">
+    <span>还是说明</span>
+    <li class="l1">列表1</li>
+    <li class="l1">列表2<span>说明</span></li>
+    <li class="l1">列表3</li>
+    <li class="l1">列表4<span>说明</span></li>
+    <li class="l1">列表5</li>
+  </ul>
+  <a href="#t12" class="link">测试内容1</a>
+  <a href="#t23" class="link">测试内容2</a>
+  <a href="#t34" class="link">测试内容3</a>
+  <a href="#t45" class="link">测试内容4</a>
+  <a href="#t56" class="link">测试内容5</a>
+
+  <ul id="u2">
+    <li>测试列表1</li>
+    <li>测试列表2</li>
+    <li>测试列表3</li>
+    <li>测试列表4</li>
+    <li>测试列表5</li>
+    <li>测试列表6</li>
+    <li>测试列表7</li>
+    <li>测试列表8</li>
+    <li>测试列表9</li>
+    <li>测试列表10</li>
+  </ul>
+</div>
+</body>
+</html>

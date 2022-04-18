@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="mybatis.properties"/>
+    <typeAliases>
+        <!--为一个类加上别名,type表示类的类型，alias表示别名，使用这种方式，如果有10个类，要写10条信息-->
+<!--        <typeAlias type="org.wlw.model.Student" alias="student"/>-->
+        <!--基于包扫描的方式来进行，此时会自动将包中的所有类去别名，别名的名称就是类名-->
+        <package name="org.wlw.model"/>
+    </typeAliases>
+    <environments default="development">
+        <!--enviroment用来进行数据库的连接配置-->
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--
+                    dirver:设置驱动
+                    url:设置连接字符串,jdbc:mysql://localhost:3306/20wlw_manager?characterEncoding=utf8，表示使用utf8的字符编码连接20wlw_manager
+                    username:用户名
+                    password:密码
+                 -->
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="org/wlw/model/StudentMapper.xml"/>
+    </mappers>
+</configuration>

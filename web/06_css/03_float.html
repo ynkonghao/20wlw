@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>漂浮</title>
+  <style>
+    *.clear {
+      clear:both;
+      list-style: none;
+    }
+    #u1 {
+      border:1px solid red;
+      width: 500px;
+    }
+    li.nav_li {
+      list-style: none;
+      float:left;/*设置了float之后，所有的标签就不会占有原来的空间*/
+      border:1px solid #aaa;
+      padding:10px 20px;
+    }
+    #content {
+      width: 996px;
+      border: 1px solid #aaa;
+    }
+    #left,#right,#center {
+      height:300px;
+      width: 300px;
+      margin:10px 2px;
+      border:1px solid green;
+      float:left;
+    }
+    #left {
+      margin-left:20px;
+    }
+  </style>
+</head>
+<body>
+  <ul id="u1">
+    <li class="nav_li">顶部导航1</li>
+    <li class="nav_li">顶部导航2</li>
+    <li class="nav_li">顶部导航3</li>
+    <li class="nav_li">顶部导航4</li>
+    <li class="nav_li">顶部导航5</li>
+    <li class="nav_li">顶部导航6</li>
+    <li class="nav_li">顶部导航7</li>
+    <li class="nav_li">顶部导航8</li>
+    <li class="clear"></li>
+  </ul>
+  <div id="content">
+    <div id="left">left</div>
+    <div id="center">center</div>
+    <div id="right">right</div>
+    <div class="clear"></div>
+  </div>
+</body>
+</html>

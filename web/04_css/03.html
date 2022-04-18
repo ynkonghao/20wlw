@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常用的容器样式</title>
+  <style>
+    div {
+      /*
+      border用来设置边框，值的写法需要按照如下顺序写
+         第一个是边框的粗细
+         第二个是边框的类型:solid(实现框),dotted(点线框),dashed(虚线框)
+         通过以下的代码，边框的四个方向都有值
+      */
+      border:1px dashed #aaa;
+      border:none;
+      border-bottom: 1px dashed #999;
+      border:1px solid #999;
+      width:260px;/*设置宽度，需要注意，div就是宽度没有网页宽，也占据一行*/
+      height:260px;/*设置高度*/
+      border-radius: 10px;/*圆角半径*/
+      /*
+      background用来编写背景，编写的方式和border类似
+         第一个是颜色
+         第二个是图片使用url加载（一般用相对路径）
+         第三个是图片的重复方式:no-repeat表示不重复，repeat表示重复(默认)，repeat-x,repeat-y
+      */
+      background: #eee url(01.png) no-repeat;
+      /*可以通过background-position写图片的位置，第一个是左右，第二个是上下，如果只写一个表示上下左右的共同值*/
+      background-position: 50% 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>我是一个容器</div>
+  <div>我还是一个容器</div>
+  <span>我是一个文本容器</span>
+</body>
+</html>

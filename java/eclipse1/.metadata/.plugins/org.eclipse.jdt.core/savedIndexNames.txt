@@ -1,0 +1,21 @@
+INDEX VERSION 1.131+D:\teach_source\20_wlw\java\eclipse1\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1460018813.index
+90595623.index
+3544973677.index
+690058988.index
+3593699218.index
+2816010262.index
+706886520.index
+1848370456.index
+2973724469.index
+1170468867.index
+3719631174.index
+1415706559.index
+3938425999.index
+1612484079.index
+457054038.index
+689393460.index
+37971775.index
+3506910564.index
+3574318172.index

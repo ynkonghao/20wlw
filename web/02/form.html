@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表单测试</title>
+</head>
+<body>
+  <form action="list.html" method="post">
+    username: <input type="text" name="username"/> <br>
+    password: <input type="password" name="pwd"/> <br>
+    interest: <input type="checkbox" name="interest" value="football" checked>足球
+              <input type="checkbox" name="interest" value="basketball">篮球
+              <input type="checkbox" name="interest" value="pingpengball">乒乓球 <br>
+    gender:   <input type="radio" value="male" name="gender" checked>男 <input type="radio" value="female" name="gender"> 女 <br>
+    Address: <select name="address">
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="guangzhou">广州</option>
+             </select> <br>
+    intro: <br>
+    <textarea name="intro" id="" cols="60" rows="10"></textarea> <br>
+    <input type="button" value="我是一个按钮"/>
+    <button>我还是一个按钮</button><!--相当于表单提交-->
+    <input type="submit" value="注册用户">
+  </form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+请完整的编写雇员信息管理系统
+
+Emp
+  String name
+  String no
+  double salary
+  String depName
+  
+EmpManager
+EmpException
+EmpUI

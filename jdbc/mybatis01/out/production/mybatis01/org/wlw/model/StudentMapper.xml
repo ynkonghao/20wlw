@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper用来编写配置，namespace表示的是命名空间，防止重复，建议使用类的全路径-->
+<mapper namespace="org.wlw.model.Student">
+    <!--编写数据库的操作，id用来标识一个唯一的操作，resultType表示返回的类型-->
+    <select id="find" resultType="student">
+        select * from t_stu
+    </select>
+
+    <select id="load" parameterType="int" resultType="student">
+        select * from t_stu where id=#{id}
+    </select>
+
+    <update id="update" parameterType="Student">
+        update t_stu set no=#{no},name=#{name},icon=#{icon},mobile=#{mobile},qq=#{qq},
+                         address=#{address},cid=#{cid},gender=#{gender} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from t_stu where id=#{id}
+    </delete>
+
+    <insert id="add" parameterType="student">
+        insert into t_stu(no,name,gender,qq,mobile,address,cid,icon) value
+            (#{no},#{name},#{gender},#{qq},#{mobile},#{address},#{cid},#{icon})
+    </insert>
+</mapper>

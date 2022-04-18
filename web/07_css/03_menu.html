@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>顶部导航</title>
+  <style>
+    *{
+      margin:0px;
+      padding:0px;
+      list-style:none;
+    }
+    *.clear {
+      clear:both;
+    }
+    #nav_base {
+      margin: auto;
+      width: 1000px;
+      margin-top:20px;
+    }
+    li.nav_li {
+      float: left;
+    }
+    li.nav_li dd,li.nav_li dt {
+      width: 130px;
+      height:40px;
+    }
+    li.nav_li dt {
+      background: #338;
+      color:#fff;
+      border-right:1px solid #fff;
+      text-align:center;
+      cursor: pointer;
+    }
+    li.nav_li dt span {
+      position: relative;
+      top:8px;
+    }
+
+    li.nav_li dd {
+      background: #393;
+      color: #fff;
+      border-bottom:1px solid #fff;
+      border-right:1px solid #fff;
+      text-align: center;
+      cursor: pointer;
+      display: none;
+    }
+    li.nav_li dd:hover {
+      background:#933;
+    }
+    li.nav_li dd span {
+      position: relative;
+      top:8px;
+    }
+
+  </style>
+  <script>
+    //DOM
+    window.onload = function() {
+      //页面全部加载完成之后才执行代码
+      var dls = document.getElementsByClassName("nav_dl");
+      // alert(dls.length);
+      for(var i=0;i<dls.length;i++) {
+        var dl = dls[i];
+        dl.onmouseover = function() {
+          var dds = this.getElementsByTagName("dd");
+          // console.log(dds.length);
+          for(var j=0;j<dds.length;j++) {
+            dds[j].style.display = "block";
+          }
+        }
+        dl.onmouseout = function() {
+          var dds = this.getElementsByTagName("dd");
+          for(var j=0;j<dds.length;j++) {
+            dds[j].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <ul id="nav_base">
+    <li class="nav_li">
+      <dl class="nav_dl">
+        <dt><span>班级管理</span></dt>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        
+      </dl>
+    </li>
+    <li class="nav_li">
+      <dl class="nav_dl">
+        <dt><span>学生管理</span></dt>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+      </dl>
+    </li>
+    <li class="nav_li">
+      <dl class="nav_dl">
+        <dt><span>校园管理</span></dt>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+        <dd><span>顶部导航</span></dd>
+      </dl>
+    </li>
+    <li class="nav_li">
+      <dl class="nav_dl">
+        <dt><span>部门管理</span></dt>
+        <dd><span>部门信息</span></dd>
+        <dd><span>部门信息</span></dd>
+        <dd><span>部门信息</span></dd>
+        <dd><span>部门信息</span></dd>
+      </dl>
+    </li>
+    <li class="nav_li">
+      <dl class="nav_dl">
+        <dt><span>校园文化</span></dt>
+        <dd><span>校园信息</span></dd>
+        <dd><span>校园信息</span></dd>
+        <dd><span>校园信息</span></dd>
+        <dd><span>校园信息</span></dd>
+        <dd><span>校园信息</span></dd>
+        <dd><span>校园信息</span></dd>
+      </dl>
+    </li>
+    <li class="nav_li">
+      <dl class="nav_dl">
+        <dt><span>班费信息</span></dt>
+        <dd><span>校园信息</span></dd>
+        <dd><span>校园信息</span></dd>
+        <dd><span>校园信息</span></dd>
+        <dd><span>校园信息</span></dd>
+        <dd><span>校园信息</span></dd>
+      </dl>
+    </li>
+    <li class="nav_li">
+      <dl class="nav_dl">
+        <dt><span>联系我们</span></dt>
+        <dd><span>班级邮箱</span></dd>
+        <dd><span>班级邮箱</span></dd>
+        <dd><span>班级邮箱</span></dd>
+        <dd><span>班级邮箱</span></dd>
+
+      </dl>
+    </li>
+    <li class="clear"></li>
+  </ul>
+</body>
+</html>

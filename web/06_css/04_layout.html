@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>布局</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      font-size:14px;
+      color:#666;
+      list-style:none;
+    }
+    *.clear {
+      clear:both;
+    }
+    #container {
+      width: 1000px;
+      border:1px solid #aaa;
+      /* margin:auto; */
+      position: relative;
+      left:50%;
+      margin-left:-500px;
+      margin-bottom:20px;
+    }
+    #top {
+      background: #eee;
+      height:66px;
+    }
+    #nav_ul {
+      border-bottom:1px solid #aaa;
+      border-top:1px solid #aaa;
+    }
+    li.nav_li {
+      float:left;
+      padding:12px 28px;
+      border-right:1px solid #aaa;
+    }
+    li.nav_li:nth-child(8) {
+      border:none;
+    }
+    a.nav_link:link,a.nav_link:visited {
+      text-decoration: none;
+    }
+    a.nav_link:hover {
+      color:#393;
+      text-decoration: underline;
+    }
+    #left,#center,#right {
+      width: 330px;
+      border-right:1px solid #aaa;
+      float:left;
+    }
+    #left {
+      /* margin-left:20px; */
+    }
+    #right {
+      border:none;
+    }
+    
+    dl.topic_dl dt {
+      height:40px;
+      background: #393;
+    }
+    dl.topic_dl dt span {
+      position: relative;
+      left:20px;
+      top:8px;
+      font-size:16px;
+      font-weight: bold;
+      color:#fff;
+    }
+    dl.topic_dl dd {
+      padding:5px 10px;
+      border-bottom:1px dashed #bbb;
+    }
+    a.topic_link:link {
+      text-decoration: none;
+      color:#333;
+    }
+    a.topic_link:visited {
+      text-decoration: none;
+      color:#666;
+    }
+    a.topic_link:hover {
+      text-decoration: underline;
+      color:#933;
+    }
+    #center dl dt {
+      background: #933;
+    }
+    #right dl dt {
+      background: orange;
+    }
+    #bottom {
+      height:66px;
+      margin-top:15px;
+      border-top:1px solid #aaa;
+    }
+    #bottom p {
+      text-align: center;
+      margin-top:20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="top">
+      logo
+    </div>
+    <nav>
+      <ul id="nav_ul">
+        <li class="nav_li"><a href="#nav1" class="nav_link">顶部链接1</a></li>
+        <li class="nav_li"><a href="#nav2" class="nav_link">顶部链接2</a></li>
+        <li class="nav_li"><a href="#nav3" class="nav_link">顶部链接3</a></li>
+        <li class="nav_li"><a href="#nav4" class="nav_link">顶部链接4</a></li>
+        <li class="nav_li"><a href="#nav5" class="nav_link">顶部链接5</a></li>
+        <li class="nav_li"><a href="#nav6" class="nav_link">顶部链接6</a></li>
+        <li class="nav_li"><a href="#nav7" class="nav_link">顶部链接7</a></li>
+        <li class="nav_li"><a href="#nav8" class="nav_link">顶部链接8</a></li>
+        <li class="clear"></li>
+      </ul>
+    </nav>
+    <div>
+      <img src="01.jpg" alt="">
+    </div>
+    <div id="content">
+      <div id="left">
+        <dl class="topic_dl">
+          <dt><span>校园新闻</span></dt>
+          <dd><a href="#topic1" class="topic_link">这是超链接测试1</a></dd>
+          <dd><a href="#topic2" class="topic_link">这是超链接测试2</a></dd>
+          <dd><a href="#topic3" class="topic_link">阿斯蒂芬这是超链接测试3</a></dd>
+          <dd><a href="#topic4" class="topic_link">这撒搭噶山沟沟地是超链接测试4</a></dd>
+          <dd><a href="#topic5" class="topic_link">高低点法这是超链接测试5</a></dd>
+          <dd><a href="#topic6" class="topic_link">这是超链接测试6</a></dd>
+          <dd><a href="#topic7" class="topic_link">大哥大哥大哥这是超链接测试7</a></dd>
+          <dd><a href="#topic8" class="topic_link">这是超链接测试8</a></dd>
+          <dd><a href="#topic9" class="topic_link">这是暗示法沙发沙发超链接测试9</a></dd>
+          <dd><a href="#topic10" class="topic_link">这是超链接测试10</a></dd>
+        </dl>
+      </div>
+      <div id="center">
+        <dl class="topic_dl">
+          <dt><span>班级新闻</span></dt>
+          <dd><a href="#topic1" class="topic_link">这是超链接测试1</a></dd>
+          <dd><a href="#topic2" class="topic_link">这是超链接测试2</a></dd>
+          <dd><a href="#topic3" class="topic_link">阿斯蒂芬这是超链接测试3</a></dd>
+          <dd><a href="#topic4" class="topic_link">这撒搭噶山沟沟地是超链接测试4</a></dd>
+          <dd><a href="#topic5" class="topic_link">高低点法这是超链接测试5</a></dd>
+          <dd><a href="#topic6" class="topic_link">这是超链接测试6</a></dd>
+          <dd><a href="#topic7" class="topic_link">大哥大哥大哥这是超链接测试7</a></dd>
+          <dd><a href="#topic8" class="topic_link">这是超链接测试8</a></dd>
+          <dd><a href="#topic9" class="topic_link">这是暗示法沙发沙发超链接测试9</a></dd>
+          <dd><a href="#topic10" class="topic_link">这是超链接测试10</a></dd>
+        </dl>
+      </div>
+      <div id="right">
+        <dl class="topic_dl">
+          <dt><span>国际新闻</span></dt>
+          <dd><a href="#topic1" class="topic_link">这是超链接测试1</a></dd>
+          <dd><a href="#topic2" class="topic_link">这是超链接测试2</a></dd>
+          <dd><a href="#topic3" class="topic_link">阿斯蒂芬这是超链接测试3</a></dd>
+          <dd><a href="#topic4" class="topic_link">这撒搭噶山沟沟地是超链接测试4</a></dd>
+          <dd><a href="#topic5" class="topic_link">高低点法这是超链接测试5</a></dd>
+          <dd><a href="#topic6" class="topic_link">这是超链接测试6</a></dd>
+          <dd><a href="#topic7" class="topic_link">大哥大哥大哥这是超链接测试7</a></dd>
+          <dd><a href="#topic8" class="topic_link">这是超链接测试8</a></dd>
+          <dd><a href="#topic9" class="topic_link">这是暗示法沙发沙发超链接测试9</a></dd>
+          <dd><a href="#topic10" class="topic_link">这是超链接测试10</a></dd>
+        </dl>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="bottom">
+      <p>
+        copyright &copy; 2022-2023
+      </p>
+    </div>
+  </div>
+</body>
+</html>

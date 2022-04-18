@@ -1,0 +1,249 @@
+*{
+    margin: 0px;
+    padding:0px;
+    list-style: none;
+    color:#aaa;
+    font-size:14px;
+}
+*.clear {
+    clear:both;
+}
+div.main {
+    background: #efeee9;
+}
+div.bottom {
+    background: url(img/bottom_bg.png) repeat-x;
+    height:152px;
+}
+div.main_center,div.bottom_center {
+    position: relative;
+    left:50%;
+    width: 1000px;
+    margin-left: -500px;
+}
+div.main_center {
+    background: url(img/top_bg.png) repeat-x;
+}
+#top_icon {
+    float:left;
+    width: 364px;
+    height:89px;
+    background: url(img/top_icon.png) no-repeat;
+}
+#top_right {
+    float:right;
+    margin-right:10px;
+}
+#top_right ul {
+    margin-top:10px;
+}
+li.top_li {
+    float:left;
+    padding:2px 10px;
+    border-right: 1px solid #5e3e29;
+}
+li.top_li:nth-child(4) {
+    border:none;
+}
+a.top_link:link,a.top_link:visited {
+    text-decoration: none;
+    color:#5e3e29;
+}
+a.top_link:hover {
+    color:#393;
+    text-decoration: underline;
+}
+#xz {
+    width: 217px;
+    height: 28px;
+    background: url(img/top_xx.png) no-repeat;
+    position: relative;
+    top:25px;
+    left:80px;
+}
+#nav {
+    height:65px;
+    background: url(img/nav_bg.png);
+}
+#nav_ul {
+    position: relative;
+    top:25px;
+    left:25px;
+}
+li.nav_li {
+    float: left;
+    margin:0px 17px;
+    cursor: pointer;
+}
+li.nav_li a {
+    padding:4px 7px;
+    color:#fff;
+    text-decoration: none;
+}
+li.nav_li a:hover {
+    background: #fff;
+    color:#86171d;
+    border-radius: 15px;
+    font-weight: bold;
+}
+#welcome {
+    padding:15px 0px;
+}
+#welcome_intro {
+    float: left;
+    margin-left:20px;
+    color: #86171d;
+}
+#search {
+    float: right;
+    margin-right: 20px;
+}
+#content {
+    background: #fff;
+    border:1px solid #d7d5c8;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom:none;
+}
+#content_top {
+    margin-left:10px;
+    margin-top:10px;
+}
+#roll_pic {
+    float: left;
+}
+#content_top img {
+    border:1px solid #aaa;
+    border-radius: 2px;
+}
+#content_xxxw {
+    float:left;
+    margin-left:20px;
+}
+#content_xxxw dt {
+    height:36px;
+    background: url(img/xxxw_icon.png) no-repeat;
+}
+#content_xxxw dt span {
+    position: relative;
+    left:55px;
+    color:#604532;
+    font-weight: bold;
+    top:6px;
+}
+#content_xxxw dd {
+    padding:8px 0px;
+    border-bottom:1px solid #aaa;
+    padding-left:20px;
+    width:280px;
+    background: url(img/arrow.png) no-repeat;
+    background-position: 0px 50%;
+}
+a.xxxw_link:link {
+    text-decoration: none;
+    color:#bf3d23;
+}
+a.xxxw_link:visited {
+    color:#cf4e34;
+}
+a.xxxw_link:hover {
+    text-decoration: underline;
+    color:#393;
+}
+#tzgg {
+    float:left;
+    margin-left:10px;
+}
+#twzt {
+    float:left;
+}
+#content_bottom {
+    margin-top: 20px;
+}
+#tzgg,#twzt {
+    margin-bottom:5px;
+}
+#tzgg dt {
+    height: 27px;
+    width: 442px;
+    background: url(img/tzgg_top.png);
+}
+#tzgg dt span {
+    position: relative;
+    color: #5e5707;
+    left:30px;
+    top:5px;
+}
+#tzgg dd {
+    margin:0px 10px;
+    padding:7px 17px;
+    background: url(img/topic_dot.png) no-repeat;
+    background-position: 2px 50%;
+    border-bottom: 1px dashed #aaa;;
+}
+a.content_link:link {
+    color:#656565;
+    text-decoration: none;
+}
+a.content_link:visited {
+    color:#979797;
+}
+a.content_link:hover {
+    text-decoration: underline;
+    color:#933;
+}
+#tzgg dt a {
+    position: relative;
+    left:330px;
+    top:4px;
+    padding:0px 10px;
+    background: #a5c24c;
+    color:#fff;
+    text-decoration: none;
+    border-radius: 5px 0px 5px 0px;
+}
+#tzgg dt a:hover {
+    background: #393;
+}
+#twzt {
+    margin-left:30px;
+    position: relative;
+}
+#twzt img {
+    position: absolute;
+    top:50px;
+    padding:5px;
+    border:1px solid #ddd;
+}
+#twzt dt {
+    height: 27px;
+    width: 497px;
+    background: url(img/twzt_top.png);
+}
+#twzt dt span {
+    position: relative;
+    color: #8a5313;
+    left:30px;
+    top:5px;
+}
+
+#twzt dt a {
+    position: relative;
+    left:380px;
+    top:4px;
+    padding:0px 10px;
+    background: #fea501;
+    color:#fff;
+    text-decoration: none;
+    border-radius: 5px 0px 5px 0px;
+}
+
+#twzt dt a:hover {
+    background: #393;
+}
+#twzt dd {
+    margin:0px 10px 0px 170px;
+    padding:7px 15px;
+    background: url(img/topic_dot.png) no-repeat;
+    background-position: 2px 50%;
+    border-bottom: 1px dashed #aaa;;
+}

@@ -1,0 +1,30 @@
+table.mytable {
+  width: 1000px;
+  margin:auto;
+  border-spacing: 0px;
+  border-top:1px solid #aaa;
+  border-right:1px solid #aaa;
+}
+table.mytable td {
+  border:1px solid #aaa;
+  border-right:none;
+  border-top:none;
+  padding:8px 10px;
+}
+table.mytable thead tr {
+  background: #338;
+  color:#fff;
+}
+table.mytable tfoot tr {
+  background: #eee;
+}
+table.mytable tfoot tr td {
+  text-align: right;
+}
+table.mytable tbody tr:nth-child(even) {
+  background: #ddd;
+}
+table.mytable tbody tr:hover {
+  background: #383;
+  color:#fff;
+}
